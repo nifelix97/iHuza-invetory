@@ -5,7 +5,7 @@ import { useTheme } from '../hooks/useTheme'
 export default function NavBar() {
   const { theme, toggleTheme } = useTheme()
   
-  console.log('Current theme in NavBar:', theme)
+  console.log('Current theme is:', theme)
 
   return (
     <div className='flex items-center justify-between h-16 shadow-sm bg-white dark:bg-gray-800 px-4 sticky top-0 z-30 transition-colors duration-300'>
@@ -33,8 +33,8 @@ export default function NavBar() {
         
         <button className='p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors relative'>
           <FiBell size={18} className='text-gray-600 dark:text-gray-300' />
-          <span className='absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center text-[10px]'>
-            3
+          <span className='absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-3 h-3 flex items-center justify-center text-[10px]'>
+            
           </span>
         </button>
         

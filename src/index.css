@@ -27,38 +27,7 @@
   --color-secondary-200: oklch(0.9711 0.0705 105.04);
   --color-secondary-300: oklch(0.6822 0.1448 265.21);
   --color-secondary-400: oklch(1 0 0);
+  --color-secondary-500: oklch(0.977 0.004 286.33);
 }
 
-/* Manual dark mode implementation */
-.dark {
-  color-scheme: dark;
-}
-
-/* Dark mode utility classes */
-.dark .dark\:bg-gray-800 {
-  background-color: rgb(31 41 55);
-}
-
-.dark .dark\:bg-gray-900 {
-  background-color: rgb(17 24 39);
-}
-
-.dark .dark\:text-white {
-  color: rgb(255 255 255);
-}
-
-.dark .dark\:text-gray-300 {
-  color: rgb(209 213 219);
-}
-
-.dark .dark\:text-gray-400 {
-  color: rgb(156 163 175);
-}
-
-.dark .dark\:hover\:bg-gray-700:hover {
-  background-color: rgb(55 65 81);
-}
-
-.dark .dark\:border-gray-700 {
-  border-color: rgb(55 65 81);
-}
+@variant dark (.dark &);

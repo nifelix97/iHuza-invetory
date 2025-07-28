@@ -29,6 +29,30 @@ export const UserProvider = ({ children }) => {
       status: "Active",
       lastLogin: "20 minutes ago",
     },
+    {
+      id: 4,
+      name: "Bob Smith",
+      email: "bob@ihuza.com",
+      role: "Staff",
+      status: "Inactive",
+      lastLogin: "1 day ago",
+    },
+    {
+      id: 3,
+      name: "Alice Johnson",
+      email: "alice@ihuza.com",
+      role: "Manager",
+      status: "Active",
+      lastLogin: "20 minutes ago",
+    },
+    {
+      id: 4,
+      name: "Bob Smith",
+      email: "bob@ihuza.com",
+      role: "Staff",
+      status: "Inactive",
+      lastLogin: "1 day ago",
+    },
   ]);
     const [users, setUsers] = useState(user);
   return (

@@ -17,7 +17,7 @@ export default function ProductCard(
     }
 ) {
   return (
-    <div className='bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 hover:shadow-lg transition-all duration-300 border dark:border-gray-700'>
+    <div className='bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 dark:border hover:shadow-lg transition-all duration-300 dark:border-gray-700'>
         <div className='flex items-center justify-between mb-3'>
             <h2 className='text-lg font-semibold text-gray-900 dark:text-white'>{productTitle}</h2>
             <span className={`px-2 py-1 rounded-full text-xs font-medium ${stockClasses[stock] || 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'}`}>

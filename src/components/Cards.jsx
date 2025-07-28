@@ -1,10 +1,10 @@
 import React from 'react'
 
 const variantClasses = {
-  primary: 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white border dark:border-gray-700',
-  secondary: 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white border dark:border-gray-700',
-  success: 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white border dark:border-gray-700',
-  danger: 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white border dark:border-gray-700',
+  primary: 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white  dark:border-gray-700',
+  secondary: 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white dark:border-gray-700',
+  success: 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white  dark:border-gray-700',
+  danger: 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white  dark:border-gray-700',
 }
 
 const iconBackgroundClasses = {

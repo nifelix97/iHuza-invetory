@@ -3,7 +3,7 @@ import ProductCard from './cards/ProductCard'
 
 export default function Product() {
   return (
-   <div className='p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg border dark:border-gray-700 transition-colors duration-300'>
+   <div className='p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg dark:border dark:border-gray-700 transition-colors duration-300'>
     <h1 className='text-xl font-semibold mb-4 text-gray-900 dark:text-white'>Recent Added Products</h1>
      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full'>
         <ProductCard
