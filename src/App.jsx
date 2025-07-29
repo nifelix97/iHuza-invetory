@@ -8,6 +8,8 @@ import Sidebar from './components/Sidebar'
 import Table from './components/Table'
 import { ThemeProvider } from './context/ThemeContext'
 import { UserProvider } from './context/UserContext'
+import { ProductProvider } from './context/ProductContext';
+
 
 function App() {
   return (
@@ -58,7 +60,9 @@ function App() {
               />
             </div>
             <div className='mt-6'>
-              <Product />
+              <ProductProvider>
+                <Product />
+              </ProductProvider>
             </div>
             <div className='mt-6'>
               <Table />
