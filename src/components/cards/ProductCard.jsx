@@ -14,6 +14,8 @@ export default function ProductCard(
         stock,
         className = '',
         variant = 'primary',
+        productImage = null, // Optional product image
+        stockquantity = null, // Optional stock quantity
     }
 ) {
   return (
@@ -26,6 +28,18 @@ export default function ProductCard(
         </div>      
         <p className='text-sm text-gray-600 dark:text-gray-400 mb-2'>{productName}</p>
         <p className='text-sm text-gray-600 dark:text-gray-400 mb-2'>{createdAt}</p>
+        {productImage && (
+            <img 
+                src={productImage} 
+                alt={productName} 
+                className='w-full h-32 object-cover rounded-lg mb-3'
+            />
+        )}
+        {stockquantity && (
+            <p className='text-sm text-gray-600 dark:text-gray-400 mb-2'>
+                Stock Quantity: {stockquantity}
+            </p>
+        )}
     </div>
   )
 }

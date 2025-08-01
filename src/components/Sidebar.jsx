@@ -5,13 +5,24 @@ import { SlLayers } from "react-icons/sl";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { useTheme } from "../hooks/useTheme";
 import { LuLogOut } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
   const { theme } = useTheme();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleLogout = () => {
+    navigate('/login');
+  };
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setIsSidebarOpen(false);
   };
 
   return (
@@ -58,11 +69,16 @@ export default function Sidebar() {
 
         <div className="flex-1 flex flex-col">
           <ul className="flex flex-col gap-2 flex-1">
-            <li className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors">
+            <li 
+              onClick={() => handleNavigation('/')}
+              className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors"
+            >
               <GrPersonalComputer />
               <span>Dashboard</span>
             </li>
-            <li className="flex items-center justify-between gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors">
+            <li 
+              onClick={() => handleNavigation('/user')}
+            className="flex items-center justify-between gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors">
               <div className="flex items-center gap-2">
                 <FiUsers />
                 <span>Users</span>
@@ -71,7 +87,9 @@ export default function Sidebar() {
                 116
               </span>
             </li>
-            <li className="flex items-center justify-between gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors">
+            <li 
+              onClick={() => handleNavigation('/products')}
+            className="flex items-center justify-between gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors">
               <div className="flex items-center gap-2">
                 <FiPackage />
                 <span>Products</span>
@@ -89,13 +107,18 @@ export default function Sidebar() {
                 10
               </span>
             </li>
-            <li className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors">
+            <li 
+              onClick={() => handleNavigation('/category')}
+            className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors">
               <SlLayers />
               <span>Categories</span>
             </li>
           </ul>
           <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-600">
-            <button className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 dark:hover:text-red-400 cursor-pointer text-gray-700 dark:text-gray-200 transition-colors w-full">
+            <button 
+              onClick={handleLogout}
+              className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 dark:hover:text-red-400 cursor-pointer text-gray-700 dark:text-gray-200 transition-colors w-full"
+            >
               <LuLogOut />
               <span>Logout</span>
             </button>
