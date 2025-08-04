@@ -11,8 +11,8 @@ import CategoryPage from '../pages/CategoryPage'
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/" element={<Dashboard />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/products" element={<ProductPage />} />
       <Route path="*" element={<NotFoundPage />} />
       <Route path="/user" element={<UserPage />} />

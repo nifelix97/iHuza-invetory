@@ -6,18 +6,25 @@ import { CgMenuRightAlt } from "react-icons/cg";
 import { useTheme } from "../hooks/useTheme";
 import { LuLogOut } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
+import { useCheckLoggedIn } from "../hooks/useCheckLoggedIn";
+import { useUser } from "../context/UserContext";
+import { useProduct } from "../hooks/useProduct";
 
 export default function Sidebar() {
   const { theme } = useTheme();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
-
+  const { setIsLoggedIn } = useCheckLoggedIn();
+  const { users } = useUser();
+  const { products } = useProduct();
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   const handleLogout = () => {
-    navigate('/login');
+    setIsLoggedIn(false);
+    localStorage.removeItem("currentUser");
+    navigate('/');
   };
 
   const handleNavigation = (path) => {
@@ -84,7 +91,7 @@ export default function Sidebar() {
                 <span>Users</span>
               </div>
               <span className="bg-gray-400 text-white rounded-full text-xs px-2 py-0.5 font-semibold">
-                116
+                {users.length}
               </span>
             </li>
             <li 
@@ -95,7 +102,7 @@ export default function Sidebar() {
                 <span>Products</span>
               </div>
               <span className="bg-gray-400 text-white rounded-full text-xs px-2 py-0.5 font-semibold">
-                100
+                {products.length}
               </span>
             </li>
             <li className="flex items-center justify-between gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors">
@@ -119,7 +126,7 @@ export default function Sidebar() {
               onClick={handleLogout}
               className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 dark:hover:text-red-400 cursor-pointer text-gray-700 dark:text-gray-200 transition-colors w-full"
             >
-              <LuLogOut />
+              <LuLogOut handleLogout={handleLogout} />
               <span>Logout</span>
             </button>
           </div>

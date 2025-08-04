@@ -38,7 +38,7 @@ export const UserProvider = ({ children }) => {
       lastLogin: "1 day ago",
     },
     {
-      id: 3,
+      id: 5,
       name: "Alice Johnson",
       email: "alice@ihuza.com",
       role: "Manager",
@@ -46,7 +46,7 @@ export const UserProvider = ({ children }) => {
       lastLogin: "20 minutes ago",
     },
     {
-      id: 4,
+      id: 6,
       name: "Bob Smith",
       email: "bob@ihuza.com",
       role: "Staff",

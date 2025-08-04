@@ -3,10 +3,12 @@ import { UserProvider } from './context/UserContext'
 import { ProductProvider } from './context/ProductContext'
 import { CategoryProvider } from './context/CategoryContext'
 import AppRoutes from './routes/AppRoutes'
+import { CheckLoggedInProvider } from './context/CheckLoggedInContext'
 
 function App() {
   return (
     <ThemeProvider>
+      <CheckLoggedInProvider>
       <UserProvider>
         <CategoryProvider>
           <ProductProvider>
@@ -14,6 +16,7 @@ function App() {
           </ProductProvider>
         </CategoryProvider>
       </UserProvider>
+      </CheckLoggedInProvider>
     </ThemeProvider>
   )
 }

@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import InPuts from '../../components/InPuts'
+import { useNavigate } from 'react-router-dom'
+import { useCheckLoggedIn } from '../../hooks/useCheckLoggedIn'
+
 
 export default function Login() {
+  const navigate = useNavigate()
+  const {user, setIsLoggedIn } = useCheckLoggedIn()
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -16,26 +21,48 @@ export default function Login() {
     })
   }
   
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const formErrors = {}
-    if (!formData.email) {
-      formErrors.email = 'Email is required'
-    }
-    if (!formData.password) {
-      formErrors.password = 'Password is required'
-    }
-    if (Object.keys(formErrors).length > 0) {
-      setErrors(formErrors)
-    } else {
-      console.log('Form submitted:', formData)
-      setFormData({
-        email: '',
-        password: ''
-      });
-      setErrors({});
-    }
+ const handleSubmit = (e) => {
+  e.preventDefault()
+  
+  const formErrors = {}
+  if (!formData.email) {
+    formErrors.email = 'Email is required'
   }
+  if (!formData.password) {
+    formErrors.password = 'Password is required'
+  }
+  
+  if (Object.keys(formErrors).length > 0) {
+    setErrors(formErrors)
+    return
+  }
+  
+  const foundUser = user.find(
+    user => user.email === formData.email 
+    && user.password === formData.password
+  )
+  
+  if (foundUser) {
+    localStorage.setItem('currentUser', JSON.stringify({
+      id: foundUser.id,
+      name: foundUser.name,
+      email: foundUser.email
+    }));
+    
+    setIsLoggedIn(true);
+    
+    setFormData({
+      email: '',
+      password: ''
+    });
+    setErrors({});
+    
+    navigate('/dashboard');
+  } else {
+    alert('user not found or invalid credentials')
+    setIsLoggedIn(false);
+  }
+}
 
   return (
     <div className='flex flex-col lg:flex-row min-h-screen'>
@@ -83,9 +110,7 @@ export default function Login() {
               type="submit" 
               className='w-full bg-primary-600 hover:bg-primary-700 text-white py-2.5 sm:py-3 px-4 rounded-md transition-colors duration-200 font-medium text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'
             >
-              <a href="/" className='flex items-center justify-center'>
-                Login
-              </a>
+              Login
             </button>
 
             <div className='mt-4 text-center'>
