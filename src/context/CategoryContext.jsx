@@ -1,7 +1,10 @@
-import React, { createContext, useState } from 'react'
-import { FiPackage, FiUsers } from "react-icons/fi";
+import  { createContext, useState } from 'react'
 import { GrPersonalComputer } from "react-icons/gr";
-import { SlLayers } from "react-icons/sl";
+import { IoPhonePortraitOutline } from "react-icons/io5";
+import { LuTabletSmartphone } from "react-icons/lu";
+import { BsTools } from "react-icons/bs";
+
+
 
 export const CategoryContext = createContext();
 
@@ -10,22 +13,22 @@ export const CategoryProvider = ({ children }) => {
         {
             id: 1,
             name: "Laptops",
-            icon: <FiPackage className="text-2xl" />
+            icon: <GrPersonalComputer className="text-2xl" />
         },
         {
             id: 2,
             name: "Mobile",
-            icon: <FiUsers className="text-2xl" />
+            icon: <IoPhonePortraitOutline className="text-2xl" />
         },
         {
             id: 3,
             name: "Tablets",
-            icon: <GrPersonalComputer className="text-2xl" />
+            icon: <LuTabletSmartphone className="text-2xl" />
         },
         {
             id: 4,
             name: "Accessories",
-            icon: <SlLayers className="text-2xl" />
+            icon: <BsTools className="text-2xl" />
         }
     ]);
 

@@ -77,7 +77,7 @@ export default function Sidebar() {
         <div className="flex-1 flex flex-col">
           <ul className="flex flex-col gap-2 flex-1">
             <li 
-              onClick={() => handleNavigation('/')}
+              onClick={() => handleNavigation('/dashboard')}
               className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-white cursor-pointer text-gray-700 dark:text-gray-200 transition-colors"
             >
               <GrPersonalComputer />
