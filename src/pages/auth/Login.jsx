@@ -75,7 +75,7 @@ export default function Login() {
       
       <div className='flex-1 lg:w-1/2 bg-primary-200 dark:bg-gray-900 flex items-center justify-center p-4 sm:p-6 lg:p-8'>
         <div className='w-full max-w-sm sm:max-w-md'>
-          <h2 className='text-xl sm:text-2xl font-bold mb-4 lg:mb-6 text-primary-50 dark:text-white text-center'>Login</h2>
+          <h2 className='text-xl sm:text-2xl font-bold mb-4 lg:mb-6 text-primary-50 dark:text-white text-center'>Please Login!!</h2>
           <form onSubmit={handleSubmit} className=' dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-xl border border-gray-300 dark:border-gray-600'>
             
             <div className='mb-4'>

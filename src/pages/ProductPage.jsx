@@ -10,7 +10,7 @@ export default function ProductPage() {
 
   return (
     <Layout>
-      <div className="mb-6 flex justify-between items-center">
+      <div className="mb-6 flex justify-between items-center bg-primary-100 dark:bg-gray-800 p-4 rounded-lg">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Product List</h1>
         <Button 
           label="Add Product" 

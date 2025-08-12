@@ -8,7 +8,7 @@ export default function CategoryPage() {
 
   return (
     <Layout>
-      <div className='mb-6 flex justify-between items-center'>
+      <div className='mb-6 flex justify-between items-center bg-primary-100 dark:bg-gray-800 p-4 rounded-lg'>
         <h1 className='text-2xl font-bold text-gray-900 dark:text-white'>Categories</h1>
         <Button 
           label="Add Category" 
@@ -17,7 +17,7 @@ export default function CategoryPage() {
         />
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 bg-primary-50 dark:bg-gray-900 p-4 rounded-lg">
         {categories && categories.length > 0 ? (
           categories.map((category) => (
             <div key={category.id} className="bg-primary-200 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow">
